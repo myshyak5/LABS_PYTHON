@@ -1,5 +1,4 @@
 ex_dict = {}
-res_dict = {}
 
 arr = input().split()
 for elem in arr:
