@@ -1,6 +1,5 @@
 import json
 import sys
-import os
 
 j_filename = sys.argv[1]
 data = []
