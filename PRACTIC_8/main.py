@@ -8,7 +8,7 @@ def Read():
     with open(filename, 'r') as f:
         data = list(csv.reader(f))
     return data[0], data[1:]
-def Show(out_type = "top", rows_count = 5):
+def Show(out_type = "top", rows_count = 5, separator = ","):
     header, rows = Read()
     if out_type == "top":
         rows = rows[:rows_count]
@@ -16,12 +16,9 @@ def Show(out_type = "top", rows_count = 5):
         rows = rows[-rows_count:]
     elif out_type == "random":
         rows = random.sample(rows, rows_count)
-    print("=" * 150)
-    print(*header, sep = " | ")
-    print("=" * 150)
+    print(*header, sep = separator)
     for row in rows:
-        print(*row, sep = " | ")
-        print("-" * 150)
+        print(*row, sep = separator)
     if len(rows) < 5:
         print("Недостаточно строк.")
 def Info():
@@ -70,7 +67,7 @@ def MakeDS():
         writer = csv.writer(f)
         writer.writerows(test_data)   
 if __name__ == "__main__":
-    # Show()
-    # Info()
-    # DelNaN()
+    Show()
+    Info()
+    DelNaN()
     MakeDS()
