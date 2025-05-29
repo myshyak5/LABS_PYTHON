@@ -1,2 +1,2 @@
 # LABS PYTHON
-<p>2 semestr: labs 1-10</p>
+<p>2 semester: labs 1-10</p>
